@@ -3,27 +3,45 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F3169BC81EFB7EB2FCCD8342 /* Pods_Automobiles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5260EB7D9138EFF1A4960628 /* Pods_Automobiles.framework */; };
+		FA47C1D623B55A5700E8A890 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA47C1D523B55A5700E8A890 /* Network.swift */; };
+		FA47C1D923B641FC00E8A890 /* AutoModelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA47C1D823B641FC00E8A890 /* AutoModelCell.xib */; };
+		FA47C1DB23B642FE00E8A890 /* Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA47C1DA23B642FE00E8A890 /* Nib.swift */; };
 		FA8128A023B5465F006DED71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA81289F23B5465F006DED71 /* AppDelegate.swift */; };
 		FA8128A223B5465F006DED71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8128A123B5465F006DED71 /* SceneDelegate.swift */; };
-		FA8128A423B5465F006DED71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8128A323B5465F006DED71 /* ViewController.swift */; };
+		FA8128A423B5465F006DED71 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8128A323B5465F006DED71 /* MainViewController.swift */; };
 		FA8128A723B5465F006DED71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8128A523B5465F006DED71 /* Main.storyboard */; };
 		FA8128A923B54662006DED71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8128A823B54662006DED71 /* Assets.xcassets */; };
 		FA8128AC23B54662006DED71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8128AA23B54662006DED71 /* LaunchScreen.storyboard */; };
+		FA8128B423B54CF0006DED71 /* CellsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8128B323B54CF0006DED71 /* CellsHeaderView.xib */; };
+		FA8128B623B54FE2006DED71 /* CellsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8128B523B54FE2006DED71 /* CellsHeaderView.swift */; };
+		FA8128B823B55215006DED71 /* AutoModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8128B723B55215006DED71 /* AutoModelCell.swift */; };
+		FA8128BB23B552E1006DED71 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8128BA23B552E1006DED71 /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5260EB7D9138EFF1A4960628 /* Pods_Automobiles.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Automobiles.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9A95FA781C4B52ADA4A201D /* Pods-Automobiles.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Automobiles.release.xcconfig"; path = "Target Support Files/Pods-Automobiles/Pods-Automobiles.release.xcconfig"; sourceTree = "<group>"; };
+		F243A4280F0845C521F970A0 /* Pods-Automobiles.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Automobiles.debug.xcconfig"; path = "Target Support Files/Pods-Automobiles/Pods-Automobiles.debug.xcconfig"; sourceTree = "<group>"; };
+		FA47C1D523B55A5700E8A890 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		FA47C1D823B641FC00E8A890 /* AutoModelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AutoModelCell.xib; sourceTree = "<group>"; };
+		FA47C1DA23B642FE00E8A890 /* Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nib.swift; sourceTree = "<group>"; };
 		FA81289C23B5465F006DED71 /* Automobiles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Automobiles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA81289F23B5465F006DED71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA8128A123B5465F006DED71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FA8128A323B5465F006DED71 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FA8128A323B5465F006DED71 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FA8128A623B5465F006DED71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA8128A823B54662006DED71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA8128AB23B54662006DED71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA8128AD23B54662006DED71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA8128B323B54CF0006DED71 /* CellsHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellsHeaderView.xib; sourceTree = "<group>"; };
+		FA8128B523B54FE2006DED71 /* CellsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellsHeaderView.swift; sourceTree = "<group>"; };
+		FA8128B723B55215006DED71 /* AutoModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoModelCell.swift; sourceTree = "<group>"; };
+		FA8128BA23B552E1006DED71 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +49,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3169BC81EFB7EB2FCCD8342 /* Pods_Automobiles.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7AF022567A6EDDE750318563 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F243A4280F0845C521F970A0 /* Pods-Automobiles.debug.xcconfig */,
+				B9A95FA781C4B52ADA4A201D /* Pods-Automobiles.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FA47C1D723B55A5B00E8A890 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FA47C1D523B55A5700E8A890 /* Network.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FA47C1DC23B6430400E8A890 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FA47C1DA23B642FE00E8A890 /* Nib.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		FA81289323B5465F006DED71 = {
 			isa = PBXGroup;
 			children = (
 				FA81289E23B5465F006DED71 /* Automobiles */,
 				FA81289D23B5465F006DED71 /* Products */,
+				7AF022567A6EDDE750318563 /* Pods */,
+				FE1F761488E56091EECE7608 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +104,52 @@
 			children = (
 				FA81289F23B5465F006DED71 /* AppDelegate.swift */,
 				FA8128A123B5465F006DED71 /* SceneDelegate.swift */,
-				FA8128A323B5465F006DED71 /* ViewController.swift */,
-				FA8128A523B5465F006DED71 /* Main.storyboard */,
+				FA47C1D723B55A5B00E8A890 /* Services */,
+				FA8128BC23B5541F006DED71 /* Model */,
+				FA8128BD23B55440006DED71 /* Controller */,
+				FA8128B923B5528B006DED71 /* View */,
 				FA8128A823B54662006DED71 /* Assets.xcassets */,
 				FA8128AA23B54662006DED71 /* LaunchScreen.storyboard */,
 				FA8128AD23B54662006DED71 /* Info.plist */,
+				FA47C1DC23B6430400E8A890 /* Helpers */,
 			);
 			path = Automobiles;
+			sourceTree = "<group>";
+		};
+		FA8128B923B5528B006DED71 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA8128A523B5465F006DED71 /* Main.storyboard */,
+				FA8128B323B54CF0006DED71 /* CellsHeaderView.xib */,
+				FA8128B523B54FE2006DED71 /* CellsHeaderView.swift */,
+				FA47C1D823B641FC00E8A890 /* AutoModelCell.xib */,
+				FA8128B723B55215006DED71 /* AutoModelCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA8128BC23B5541F006DED71 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA8128BA23B552E1006DED71 /* Models.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FA8128BD23B55440006DED71 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FA8128A323B5465F006DED71 /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FE1F761488E56091EECE7608 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5260EB7D9138EFF1A4960628 /* Pods_Automobiles.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +159,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA8128B023B54662006DED71 /* Build configuration list for PBXNativeTarget "Automobiles" */;
 			buildPhases = (
+				842F2D4E7AA7C841554B73CF /* [CP] Check Pods Manifest.lock */,
 				FA81289823B5465F006DED71 /* Sources */,
 				FA81289923B5465F006DED71 /* Frameworks */,
 				FA81289A23B5465F006DED71 /* Resources */,
+				A749AB35E062C8C2570D65C5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,21 +213,70 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA8128AC23B54662006DED71 /* LaunchScreen.storyboard in Resources */,
+				FA47C1D923B641FC00E8A890 /* AutoModelCell.xib in Resources */,
 				FA8128A923B54662006DED71 /* Assets.xcassets in Resources */,
 				FA8128A723B5465F006DED71 /* Main.storyboard in Resources */,
+				FA8128B423B54CF0006DED71 /* CellsHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		842F2D4E7AA7C841554B73CF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Automobiles-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A749AB35E062C8C2570D65C5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Automobiles/Pods-Automobiles-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Automobiles/Pods-Automobiles-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Automobiles/Pods-Automobiles-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FA81289823B5465F006DED71 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA8128A423B5465F006DED71 /* ViewController.swift in Sources */,
+				FA8128B823B55215006DED71 /* AutoModelCell.swift in Sources */,
+				FA8128A423B5465F006DED71 /* MainViewController.swift in Sources */,
+				FA8128B623B54FE2006DED71 /* CellsHeaderView.swift in Sources */,
+				FA8128BB23B552E1006DED71 /* Models.swift in Sources */,
 				FA8128A023B5465F006DED71 /* AppDelegate.swift in Sources */,
+				FA47C1DB23B642FE00E8A890 /* Nib.swift in Sources */,
 				FA8128A223B5465F006DED71 /* SceneDelegate.swift in Sources */,
+				FA47C1D623B55A5700E8A890 /* Network.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +418,7 @@
 		};
 		FA8128B123B54662006DED71 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F243A4280F0845C521F970A0 /* Pods-Automobiles.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +437,7 @@
 		};
 		FA8128B223B54662006DED71 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9A95FA781C4B52ADA4A201D /* Pods-Automobiles.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

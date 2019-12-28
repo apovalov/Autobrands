@@ -30,7 +30,7 @@ class Network {
             do {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let result = try decoder.decode(BrandContainer.self, from: data)
+                let result = try decoder.decode(Container<Brand>.self, from: data)
                 completion(result.data, nil)
             } catch {
                 print("Failed to decode JSON: \(error.localizedDescription)")
@@ -60,7 +60,7 @@ class Network {
             do {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let result = try decoder.decode(ModelContainer.self, from: data)
+                let result = try decoder.decode(Container<Model>.self, from: data)
                 completion(result.data, nil)
             } catch {
                 print("Failed to decode JSON: \(error.localizedDescription)")

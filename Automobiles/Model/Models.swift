@@ -8,12 +8,8 @@
 
 import Foundation
 
-struct BrandContainer: Codable {
-    var data: [Brand]
-}
-
-struct ModelContainer: Codable  {
-    var data: [Model]
+struct Container<T: Codable>: Codable {
+    var data: [T]
 }
 
 struct Brand: Codable {

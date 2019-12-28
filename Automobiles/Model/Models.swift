@@ -21,7 +21,7 @@ struct Brand: Codable {
     var brandName: String
     var founderNames: [String]
     var foundationDate: String
-    var brandModels: [Model]! = [Model]()
+    var brandModels: [Model]! = []
     
     init(brand: Brand, models: [Model]) {
         self.id = brand.id
@@ -34,20 +34,10 @@ struct Brand: Codable {
     }
 }
 
-
 struct Model: Codable {
     var brandId: String
     var modelName: String
     var releaseDate: String
 }
 
-
-func addModels(brands: [Brand]?, models: [Model]?) -> [Brand]?{
-    var outBrands = [Brand]()
-    guard let brands = brands, let models = models else { return nil }
-    for brand in brands {
-        outBrands.append(Brand(brand: brand, models: models))
-    }
-   return outBrands
-}
 

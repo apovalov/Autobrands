@@ -13,8 +13,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var table: UITableView!
     private var refreshControl: UIRefreshControl?
     
-    private var brands = [Brand]()
-    private var models = [Model]()
+    private var brands: [Brand] = []
+    private var models: [Model] = []
     var network = Network()
     
     
@@ -31,13 +31,13 @@ class MainViewController: UIViewController {
     
     //MARK: - TableView & Refreshing customization
     
+    /// Make `MainViewController` delegate and datasource of  `table`
     private func setupTableView() {
-        let nib = UINib(nibName: "AutoModelCell", bundle: nil)
-        table.register(nib, forCellReuseIdentifier: AutoModelCell.reuseId)
         table.dataSource = self
         table.delegate = self
     }
     
+    /// Inititalization and customization `UIRefreshControl`
     private func configureRefreshControl() {
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(startUpdate), for: .valueChanged)
@@ -51,32 +51,50 @@ class MainViewController: UIViewController {
     }
     
     
-    //MARK: - Data reaceiving
+    //MARK: - Data receiving
     
+    /// Taking data from the network, UI updating and error handling. The update of UI was in two steps: when brands were received and brands with models were received.
     private func receiveData() {
         refreshControl?.beginRefreshing()
         
         let group = DispatchGroup()
         group.enter()
-        network.loadBrands(completion: { [weak self] brands in
-            self?.brands = brands ?? []
-            self?.table.reloadData()
+        network.loadBrands(completion: { [weak self] (brands, error) in
+            guard let self = self else { return }
+            if let error = error {
+                Util.addAlert(parent: self, title: "Ошибка", message: error.localizedDescription)
+            }
+            self.brands = brands ?? []
+            self.table.reloadData()
             group.leave()
         })
         
         group.enter()
-        network.loadModels(completion: { [weak self] models in
-            self?.models = models ?? []
+        network.loadModels(completion: { [weak self] (models, error) in
+            guard let self = self else { return }
+            if let error = error {
+                Util.addAlert(parent: self, title: "Ошибка", message: error.localizedDescription)
+            }
+            self.models = models ?? []
             group.leave()
         })
         
         let modelsUpdate = DispatchWorkItem { [weak self] in
-            guard let brands = addModels(brands: self?.brands, models: self?.models) else { return }
-            self?.brands = brands
-            self?.refreshControl?.endRefreshing()
-            self?.table.reloadData()
+            guard let self = self else { return }
+            guard let brands = self.addModels(to: self.brands, with: self.models) else { return }
+            self.brands = brands
+            DispatchQueue.main.async {
+                self.refreshControl?.endRefreshing()
+                self.table.reloadData()
+            }
         }
-        group.notify(queue: .main, work: modelsUpdate)
+        group.notify(queue: DispatchQueue.global(), work: modelsUpdate)
+    }
+    /// Adding models to existing array of brands.
+    func addModels(to brands: [Brand]?, with models: [Model]?) -> [Brand]?{
+        guard let brands = brands, let models = models else { return nil }
+        let outBrands = brands.map{Brand(brand: $0, models: models)}
+        return outBrands
     }
 }
 
@@ -90,8 +108,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let brand = brands[section].brandModels?.count ?? 0
-        return brand
+        let sections = brands[section].brandModels?.count ?? 0
+        return sections
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -105,7 +123,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let brand = brands[section]
-        let headerView: CellsHeaderView = CellsHeaderView.loadFromNin()
+        let headerView: CellsHeaderView = CellsHeaderView.loadFromNib()
         headerView.set(with: brand)
         return headerView
     }

@@ -27,8 +27,7 @@ class AutoModelCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    //MARK: - Cell customization with user data
-    
+    ///  Cell customization with user data
     func set(with model: Model!) {
         guard let model = model else { return }
         self.modelLabel.text = model.modelName

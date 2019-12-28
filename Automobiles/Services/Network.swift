@@ -11,9 +11,8 @@ import Alamofire
 
 class Network {
     
-    
-    
-    func loadBrands(completion: @escaping ([Brand]?) -> Void) {
+    /// Downloading data efrom nenwork and serialization to array of `Brand`
+    func loadBrands(completion: @escaping ([Brand]?, Error?) -> Void) {
         
         let url = "http://www.mocky.io/v2/5db959e43000005a005ee206"
         
@@ -21,23 +20,28 @@ class Network {
             (dataRresponse) in
             if let error = dataRresponse.error {
                 print("Error received requestiong data: \(error.localizedDescription)")
-                completion(nil)
+                completion(nil, error)
             }
             
             guard let data = dataRresponse.data else {
                 print("No data in response")
-                return completion(nil)}
+                return completion(nil, nil)}
             
-            if let decoded = self.decodeJSON(type: BrandContainer.self, from: data) {
-                completion(decoded.data) } else {
-                print("Failed to decode JSON")
-                completion(nil)
+            do {
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let result = try decoder.decode(BrandContainer.self, from: data)
+                completion(result.data, nil)
+            } catch {
+                print("Failed to decode JSON: \(error.localizedDescription)")
+                completion(nil, error)
             }
         })
+        
     }
     
-    
-    func loadModels(completion: @escaping ([Model]?) -> Void) {
+    /// Downloading data from nenwork and serialization to array of `Model`
+    func loadModels(completion: @escaping ([Model]?, Error?) -> Void) {
         
         let url = "http://www.mocky.io/v2/5db9630530000095005ee272"
         
@@ -45,27 +49,24 @@ class Network {
             (dataRresponse) in
             if let error = dataRresponse.error {
                 print("Error received requestiong data: \(error.localizedDescription)")
-                completion(nil)
+                completion(nil, error)
             }
             
             guard let data = dataRresponse.data else {
                 print("No data in response")
-                return completion(nil)}
+                completion(nil, nil)
+                return }
             
-            if let decoded = self.decodeJSON(type: ModelContainer.self, from: data) {
-                completion(decoded.data) } else {
-                print("Failed to decode JSON")
-                completion(nil)
+            do {
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let result = try decoder.decode(ModelContainer.self, from: data)
+                completion(result.data, nil)
+            } catch {
+                print("Failed to decode JSON: \(error.localizedDescription)")
+                completion(nil, error)
             }
         })
-    }
-    
-    
-    private func decodeJSON<T: Decodable>(type: T.Type, from: Data?) -> T? {
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        guard let data = from, let response = try? decoder.decode(type.self, from: data) else { return nil }
-        return response
     }
 }
 

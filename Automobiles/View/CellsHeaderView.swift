@@ -14,9 +14,7 @@ class CellsHeaderView: UIView {
     @IBOutlet weak var founderLabel: UILabel!
     @IBOutlet weak var sinceDateLabel: UILabel!
     
-    
-    //MARK: - Header customization with user data
-    
+    /// Header customization with user data
     func set(with brand: Brand) {
         self.brandLabel.text = brand.brandName
         self.founderLabel.text = brand.founderNames.first
